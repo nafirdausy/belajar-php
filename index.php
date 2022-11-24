@@ -47,6 +47,7 @@ mysqli_close($con);
             <th>Tempat Lahir</th>
             <th>Tanggal Lahir</th>
             <th>Alamat</th>
+            <th>Action</th>
         </tr>
         <?php foreach ($mahasiswa as $row): ?>
             <tr>
@@ -56,6 +57,10 @@ mysqli_close($con);
                 <td><?= $row['tempat_lahir'] ?></td>
                 <td><?= $row['tanggal_lahir'] ?></td>
                 <td><?= $row['alamat'] ?></td>
+                <td>
+                    <a href="update.php?id=<?= $row['id'] ?>" >Edit</a> | 
+                    <a href="delete.php?id=<?= $row['id'] ?>" >Delete</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
